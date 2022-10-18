@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import { RepositoryItem } from "./RepositoryItem";
 import "../styles/repositories.scss";
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   //0 - Se uma variável mudar a função é acionada
   //1 - se o segundo parametro for um array vazio [] ela irá executar uma única vez
